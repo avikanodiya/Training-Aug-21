@@ -12,10 +12,8 @@ SELECT e.FirstName,i.IncentiveAmount FROM Employees e LEFT JOIN Incentives i ON 
 
 --Select EmployeeName, ManagerName from the employee table.
 
-SELECT e.FirstName,m.FirstName FROM Employees e LEFT JOIN Manager m on e.EmployeeID=m.EmployeeID
+SELECT e.FirstName as EmployeeName,m.FirstName as ManagerName FROM Employees e left join Employees m on e.EmployeeID=m.EmployeeID
 
 --Select first_name, incentive amount from employee and incentives table for all employees even if they didn’t get incentives and set incentive amount as 0 for those employees who didn’t get incentives.
 
 SELECT E.FirstName,ISNULL(i.IncentiveAmount,0) FROM Employees E LEFT JOIN Incentives i ON e.EmployeeID=i.EmployeeID
-
-

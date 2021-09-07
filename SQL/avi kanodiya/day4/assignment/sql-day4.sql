@@ -25,3 +25,4 @@ SELECT DepartmentID,min(Salary) FROM Employees group by DepartmentID order by mi
 --Select department, total salary with respect to a department from employee table where total salary greater than 50000 order by TotalSalary descending
 
 SELECT DepartmentID,sum(Salary) as TotalSalary FROM Employees group by DepartmentID having sum(Salary)>50000 order by sum(Salary) desc;
+
