@@ -3,7 +3,7 @@
 create database practice
 use practice
 create table Countries (
-CountryID varchar(5) ,
+CountryID varchar(5) PRIMARY KEY NOT NULL,
 CountryName varchar(10) CHECK(CountryName IN('Italy','India','China')),
 RegionID varchar(5)
 )

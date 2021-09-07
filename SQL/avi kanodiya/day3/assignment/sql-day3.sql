@@ -10,9 +10,9 @@ SELECT RIGHT(replicate('$',10)+cast(Salary as varchar(15)),10) AS SALARY FROM Em
 
 SELECT EmployeeID,FirstName,LastName,HireDate FROM Employees WHERE DATENAME(day,HireDate) = 7 OR DATENAME(year,HireDate) = 7
 
---Write a query to display the employees with their code, first name, last name and hire date who hired either on seventh day of any month or seventh month in any year.
+--Write a query to display the length of first name for employees where last name contains character ‘c’ after 2nd position.
 
-SELECT FirstName FROM Employees WHERE SUBSTRING(LastName,3,1) = 'c'
+SELECT LEN(FirstName) FirstNameLength FROM Employees WHERE SUBSTRING(LastName,3,1) = 'c'
 
 --Write a query to extract the last 4 character of PhoneNumber.
 
