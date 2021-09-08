@@ -34,6 +34,9 @@ UPDATE Employees SET Salary = CASE DepartmentID WHEN 40 THEN Salary+(Salary * 0.
 
 UPDATE Employees SET Salary = Salary+(Salary * 0.20), CommissionPct = CommissionPct+(CommissionPct * 0.10) WHERE JobId = 'PU_CLERK'
 
+
+                                                        ------SELECT QUERIES------
+
 --Get all employee details from the Employee table
 
 SELECT * FROM Employees
