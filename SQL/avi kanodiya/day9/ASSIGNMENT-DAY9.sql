@@ -1,9 +1,10 @@
 --Create a batch Select Banking as ‘Bank Dept’, Insurance as ‘Insurance Dept’ and Services as ‘Services Dept’ from employee table
-SELECT CASE DepartmentName WHEN 'Accounting' THEN 'Account Dept'
-						WHEN 'Finance' THEN 'Finance Dept'
-						WHEN 'Construction' THEN 'Construction Dept'
-						END
-						AS Department FROM Departments
+SELECT CASE DepartmentName 
+WHEN 'Accounting' THEN 'Account Dept'
+WHEN 'Finance' THEN 'Finance Dept'
+WHEN 'Construction' THEN 'Construction Dept'
+END
+AS Department FROM Departments
 
 --5 Students Name, Address, City, DOB, Standard need to be inserted in the student table, need to fetch these result from json variable. and select output in the json format
 
