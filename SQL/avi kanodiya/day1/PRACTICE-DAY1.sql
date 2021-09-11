@@ -1,6 +1,5 @@
 --Write a SQL statement to create a table named countries including columns CountryId, CountryName and RegionId and make sure that no countries except Italy, India and China will be entered in the table. and combination of columns CountryId and RegionId will be unique.
-
-create database practice
+CREATE DATABASE practice
 use practice
 create table Countries (
 CountryID varchar(5) PRIMARY KEY NOT NULL,
@@ -10,7 +9,7 @@ RegionID varchar(5)
 
 --Write a SQL statement to create a table named JobHistory including columns EmployeeId, StartDate, End_Eate, Job_Id and Department_Id and make sure that the value against column EndDate will be entered at the time of insertion to the format like ‘–/–/—-‘.
 
-create table JobHistory (
+CREATE TABLE JobHistory (
 EmployeeID INT PRIMARY KEY,
 StartDate DATE,
 EndDate DATE,
@@ -20,7 +19,7 @@ DepartmentID INT UNIQUE
 
 --Write a SQL statement to create a table named jobs including columns JobId, JobTitle, MinSalary and MaxSalary, and make sure that, the default value for JobTitle is blank and MinSalary is 8000 and MaxSalary is NULL will be entered automatically at the time of insertion if no value assigned for the specified columns.
 
-create table Jobs(
+CREATE TABLE Jobs(
 JobID INT PRIMARY KEY,
 JobTitle VARCHAR(100) DEFAULT NULL,
 MinSalary INT DEFAULT 8000,
@@ -35,7 +34,7 @@ DeaprtmentName VARCHAR(100)
 );
 DROP TABLE Departments
 
-create table Employees (
+CREATE TABLE Employees (
 EmployeeID INT PRIMARY KEY,
 FirstName VARCHAR(50),
 LastName VARCHAR(50),
