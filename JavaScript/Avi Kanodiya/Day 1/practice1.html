@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="sum"></p>
+    <script>
+        var data1 = prompt("enter first number")
+        var data2 = prompt("enter second number")
+        var data3 = prompt("enter third number")
+
+        data1 = parseInt(data1)
+        data2 = parseInt(data2)
+        data3 = parseInt(data3)
+
+        var big = Math.max(data1, data2, data3)
+        var sum = 0;
+
+        function addition(data1, data2, data3) {
+            if (data1 > 40 && data2 > 40 && data3 > 40) {
+                sum = data1 + data2 + data3;
+                document.getElementById("sum").innerHTML = "greater number is " + big + " sum of numbers that are greater than 40 is " + sum;
+            }
+            else if (data1 > 0 && data2 > 0 && data3 > 0) {
+                document.getElementById("sum").innerHTML = "greater number is " + big;
+            }
+            else {
+                document.getElementById("sum").innerHTML = "Refresh page and enter all three numbers"
+            }
+        }
+        console.log(addition(data1, data2, data3))
+
+    </script>
+</body>
+
+</html>
