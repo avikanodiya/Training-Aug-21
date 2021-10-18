@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<style>
+    .sidebar {
+        /* display: grid; */
+        float: left;
+        height: 100%;
+        /* grid-template-columns: 30%; */
+        background-color: darkblue;
+        position: fixed;
+        width: 20%;
+        height: 100vh;
+        font-size: 25px;
+    }
+
+    a {
+        text-decoration: none;
+        color: dimgray
+    }
+
+    ol {
+        color: black;
+    }
+
+    .content {
+        float: right;
+        width: 80%;
+
+    }
+
+    table {
+        margin: 80px 0 0 120px;
+    }
+
+    table,
+    th,
+    td {
+
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        text-align: center;
+    }
+
+    
+</style>
+
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../main.html">Home</a>
+                <!--  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span> 
+                        </button> -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../htmlwork.html">Html</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../csswork.html">Css</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../bswork.html">Bootstrap</a>
+
+                    </ul>
+                    </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <div class="sidebar">
+            <ol>
+                <li>Day 3
+                    <ul>
+                        <li>Practice Exercise
+                            <ol>
+                                <li><a href="../day1/PRACTICE1.html">Student ReportCard</a></li>
+                                <li><a href="../day1/PRACTICE1.html">Department Hierarchy</a></li>
+                                <li><a href="../day1/PRACTICE1.html">Login Form</a></li>
+                                <li><a href="../day1/PRACTICE1.html">Article Tag</a></li>
+                                <li><a href="../day1/PRACTICE1.html">Navigation Bar</a></li>
+                            </ol>
+                        </li>
+                        <li>Assignment
+                            <ol>
+                                <li><a href="../day1/ASSIGNMENT1.html">Employee Form</a></li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+            <ol>
+                <li>Day 4
+                    <ul>
+                        <li>Practice Exercise
+                            <ol>
+                                <li><a href="../day2/PRACTICE1.html">Text Alignment</a></li>
+                                <li><a href="../day2/PRACTICE2.html">Paragraph with Border</a></li>
+                                <li><a href="../day2/PRACTICE3.html">Horizontal List</a></li>
+                                <li><a href="../day2/PRACTICE4.html">Universal Selector</a></li>
+                                <li><a href="../day2/PRACTICE5.html">css</a></li>
+                            </ol>
+                        </li>
+                        <li>Assignment
+                            <ol>
+                                <li><a href="../day2/ASSIGNMENT.html">Employee Form</a></li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <div class="content">
+            <table>
+
+                <tr>
+                    <th colspan="6">Name :Rahul Roll Number:13 Year of Passing:2017</th>
+                </tr>
+                <tr>
+                    <th>Subject</th>
+                    <th>1st Sem</th>
+                    <th>2nd Sem</th>
+                    <th>3nd Sem</th>
+                    <th>4nd Sem</th>
+                    <th>Total Grade</th>
+                </tr>
+                <tr>
+                    <td>Chemistry</td>
+                    <td>75</td>
+                    <td>68</td>
+                    <td>89</td>
+                    <td>71</td>
+                    <td>75.75</td>
+                </tr>
+                <tr>
+                    <td>Maths</td>
+                    <td>80</td>
+                    <td>72</td>
+                    <td>85</td>
+                    <td>74</td>
+                    <td>77.75</td>
+                </tr>
+                <tr>
+                    <td>Physics</td>
+                    <td>70</td>
+                    <td>60</td>
+                    <td>73</td>
+                    <td>72</td>
+                    <td>68.75</td>
+                </tr>
+                <tr>
+                    <td>Average</td>
+                    <td>75</td>
+                    <td>66.67</td>
+                    <td>82.33</td>
+                    <td>72.34</td>
+                    <th>74.08</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

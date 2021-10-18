@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1,
+    p {
+        border: 2px solid blue;
+    }
+
+    @media only screen and (max-width: 500px) {
+
+        h1 {
+            border: 2px solid red;
+            font-size: 17px;
+        }
+
+        p {
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width: 500px) {
+
+        h1,
+        p {
+            border: 2px solid green;
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+
+        h1,
+        p {
+            border: 2px solid black;
+        }
+    }
+
+    @media only screen and (min-width: 1200px) {
+
+        h1,
+        p {
+            border: 2px solid purple;
+        }
+    }
+</style>
+
+<body>
+    <h1>Media query</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime rerum nostrum iure corrupti neque repellendus
+        officiis facilis dolorum corporis blanditiis quisquam nam exercitationem consectetur, sit reprehenderit vero
+        quam molestias! Nostrum.</p>
+</body>
+
+</html>
