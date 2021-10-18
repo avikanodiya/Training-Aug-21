@@ -1,4 +1,4 @@
-<!doctype html>
+    <!doctype html>
 <html lang="en">
 
 <head>
@@ -44,7 +44,7 @@
         console.log(jsondata);
         $(document).ready(() => {
             $.each(jsondata, (index, value) => {
-                // console.log(value);
+                console.log(value);
                 // $("#table").append($("tr").append($("td").text(value.ProductID)).append($("td").text(value.ProductName)).append($("td").text(value.Price).append($("td").text(value.Quantity))))
                 $("#tdata").append("<tr>" +
                     "<td>" + value.ProductID + "</td>" +
