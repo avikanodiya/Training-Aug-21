@@ -1,0 +1,67 @@
+[
+    {
+        "ProductID": 1,
+        "ProductName": "Xiaomi 11 Lite NE 5G",
+        "firstPrice": 31100.00,
+        "Price": 17490.00,
+        "imgLink": "https://m.media-amazon.com/images/I/71XmlboxNZL._AC_UL320_.jpg",
+        "height": "200px",
+        "width": "100px"
+        
+    },
+    {
+        "ProductID": 2,
+        "ProductName": "Samsung 32 Inch Tv",
+        "firstPrice": 31100.00,
+        "Price": 26999.00,
+        "imgLink": "https://m.media-amazon.com/images/I/71fEd9glTIL._AC_UY218_.jpg",
+        "height": "200px",
+        "width": "300px"
+        
+    },
+    {
+        "ProductID": 2,
+        "ProductName": "Samsung 32 Inch Tv",
+        "firstPrice": 31100.00,
+        "Price": 26999.00,
+        "imgLink": "https://m.media-amazon.com/images/I/71fEd9glTIL._AC_UY218_.jpg",
+        "height": "200px",
+        "width": "300px"   
+    },
+    {
+        "ProductID": 2,
+        "ProductName": "Samsung 32 Inch Tv",
+        "firstPrice": 31100.00,
+        "Price": 26999.00,
+        "imgLink": "https://m.media-amazon.com/images/I/71fEd9glTIL._AC_UY218_.jpg",
+        "height": "200px",
+        "width": "300px"
+    },
+    {
+        "ProductID": 2,
+        "ProductName": "Samsung 32 Inch Tv",
+        "firstPrice": 31100.00,
+        "Price": 26999.00,
+        "imgLink": "https://m.media-amazon.com/images/I/71fEd9glTIL._AC_UY218_.jpg",
+        "height": "200px",
+        "width": "300px"
+    },
+    {
+        "ProductID": 2,
+        "ProductName": "Samsung 32 Inch Tv",
+        "firstPrice": 31100.00,
+        "Price": 26999.00,
+        "imgLink": "https://m.media-amazon.com/images/I/71fEd9glTIL._AC_UY218_.jpg",
+        "height": "200px",
+        "width": "300px"
+    },
+    {
+        "ProductID": 2,
+        "ProductName": "Samsung 32 Inch Tv",
+        "firstPrice": 31100.00,
+        "Price": 26999.00,
+        "imgLink": "https://m.media-amazon.com/images/I/71fEd9glTIL._AC_UY218_.jpg",
+        "height": "200px",
+        "width": "300px"
+    }
+]

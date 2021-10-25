@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/6100239047.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <style>
+        body {
+            background-color: #EAEDED;
+            overflow-x: hidden;
+        }
+
+        #searchbar {
+            justify-content: center;
+        }
+
+        #searchinput {
+            width: 1300px !important;
+        }
+
+        a {
+            text-decoration: none !important;
+            color: black;
+        }
+
+        #backTop:hover {
+            cursor: pointer;
+
+        }
+
+        p>a {
+            font-size: 13px;
+        }
+
+        @media (max-width: 767px) {
+            .carousel-inner .carousel-item>div {
+                display: none;
+            }
+
+            .carousel-inner .carousel-item>div:first-child {
+                display: block;
+            }
+        }
+
+        .carousel-inner .carousel-item.active,
+        .carousel-inner .carousel-item-next,
+        .carousel-inner .carousel-item-prev {
+            display: flex;
+        }
+
+        /* medium and up screens */
+        @media (min-width: 768px) {
+
+            .carousel-inner .carousel-item-end.active,
+            .carousel-inner .carousel-item-next {
+                transform: translateX(25%);
+
+            }
+
+            .carousel-inner .carousel-item-start.active,
+            .carousel-inner .carousel-item-prev {
+                transform: translateX(-25%);
+
+            }
+
+
+        }
+
+        .carousel-inner .carousel-item-end,
+        .carousel-inner .carousel-item-start {
+            transform: translateX(0);
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="container my-5">
+            <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><img width="100" height="27" src="../asssets/amazon-logo.png"
+                            alt=""></a>
+                    <form class="d-flex justify-content-center me-auto" id="searchbar">
+                        <div class="input-group"><button class="btn btn-outline-secondary bg-light dropdown-toggle"
+                                type="button" data-bs-toggle="dropdown" aria-expanded="false">All</button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">All</a></li>
+                                <li><a class="dropdown-item" href="#">Furniture</a></li>
+                                <li><a class="dropdown-item" href="#">Electronics</a></li>
+                                <li><a class="dropdown-item" href="#">Others</a></li>
+
+                            </ul>
+                            <input id="searchinput" class="form-control" type="search" placeholder="Search"
+                                aria-label="Search">
+                            <span class="input-group-btn">
+                                <button class="btn btn-green bg-warning" type="button"><i
+                                        class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Hello, Sign in <br><b>Accounts &
+                                    Lists</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Returns <b><br>& Orders</b></a>
+                        </li>
+                        <li class="nav-item mt-2">
+                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Cart</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="container d-flex justify-content-center"><img style="align-items: center;" src="../asssets/home.png"
+            alt=""></div>
+    <div class="container-fluid">
+
+        <br>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <div class="col">
+                <div style="width: 25rem;" class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Up to 60% off | Daily essentials</h5>
+                        <div>
+                            <div class="me-2" style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/Consumables/Jupiter21-Teaser1/Phase3QC/DesktopGateway_QuadCard_372X232_ASIN_LIFESTYLE-3._SY232_CB639329890_.jpg"
+                                    alt="health and household">
+                                <p><a href="">health and household</a></p>
+                            </div>
+                            <div style="display:inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/Consumables/Jupiter21-Teaser1/Phase3QC/DesktopGateway_QuadCard_372X232_ASIN_LIFESTYLE-4._SY232_CB639329890_.jpg"
+                                    alt="">
+                                <p><a href="">Food and Beverages</a></p>
+                            </div>
+                        </div><br>
+                        <div>
+                            <div class="me-2" style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/Consumables/Jupiter21-Teaser1/Phase3QC/DesktopGateway_QuadCard_372X232_ASIN_LIFESTYLE-2._SY232_CB639329890_.jpg"
+                                    alt="">
+                                <p><a href="">Baby Products</a></p>
+
+                            </div>
+                            <div style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/Consumables/Jupiter21-Teaser1/Phase3QC/DesktopGateway_QuadCard_372X232_ASIN_LIFESTYLE-1._SY232_CB639329890_.jpg"
+                                    alt="">
+                                <p><a href="">Pet Supplies</a></p>
+                            </div>
+                        </div>
+                        <p><a href="">See all deals</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div style="width: 25rem;" class="card">
+                    <div class="card-body ">
+                        <h5 class="card-title">Up to 50% off | Alexa & Fire TV devices</h5>
+                        <div>
+                            <div class="me-4" style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/AmazonDevices/2019/Jupiter-21/phase3/1x_Top-products-Tile-1-min._SY116_CB639196555_.jpg"
+                                    alt="health and household">
+                                <p><a href="">Echo Dot combo | ₹2,199</a></p>
+                            </div>
+                            <div style="display:inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/AmazonDevices/2019/Jupiter-21/phase3/1x_Top-products-Tile-3-min._SY116_CB639196555_.jpg"
+                                    alt="">
+                                <p><a href="">Fire TV Stick lite | ₹1,799</a></p>
+                            </div>
+                        </div><br>
+                        <div>
+                            <div class="me-2" style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/AmazonDevices/2019/Jupiter-21/phase3/1x_All-devices-tile-2-min._SY116_CB639196555_.jpg"
+                                    alt="">
+                                <p><a href="">New Fire TV Stick lite | ₹2,399</a></p>
+
+                            </div>
+                            <div style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/AmazonDevices/2019/Jupiter-21/phase3/1x_All-devices-tile-4-min._SY116_CB639196555_.jpg"
+                                    alt="">
+                                <p><a href="">Echo dot 4th gen| ₹3,649</a></p>
+                            </div>
+                        </div>
+                        <p><a href="">See all deals</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div style="width: 25rem;" class="card">
+                    <div class="card-body ">
+                        <h5 class="card-title">Up to 80% off | Women's fashion</h5>
+                        <div>
+                            <div class="me-2" style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/Event/Gateway/Jupiter_21/Phase3/186-116/WF-5.2._SY116_CB639119115_.jpg"
+                                    alt="health and household">
+                                <p><a href="">Deals on Clothing</a></p>
+                            </div>
+                            <div style="display:inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/Event/Gateway/Jupiter_21/Phase3/186-116/WF-6.2._SY116_CB639119115_.jpg"
+                                    alt="">
+                                <p><a href="">Deals on foot</a></p>
+                            </div>
+                        </div><br>
+                        <div>
+                            <div class="me-2" style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/Event/Gateway/Jupiter_21/Phase3/186-116/WF-7.2._SY116_CB639119115_.jpg"
+                                    alt="">
+                                <p><a href="">Deals on jewellery</a></p>
+
+                            </div>
+                            <div style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/Event/Gateway/Jupiter_21/Phase3/186-116/WF-8.2._SY116_CB639119115_.jpg"
+                                    alt="">
+                                <p><a href="">Deals on beuty</a></p>
+                            </div>
+                        </div>
+                        <p><a href="">See all deals</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div style="width: 25rem;" class="card">
+                    <div class="card-body ">
+                        <h5 class="card-title">Up to 60% off | Daily essentials</h5>
+                        <div>
+                            <div class="me-4" style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/VG-2019Dec/xcm_banners_2021_jupiterph3_qc-186x116-product1-product2-badge-u2pd6-8593w-9jnpj_372x232_in-en._SY116_CB639596217_.jpg"
+                                    alt="health and household">
+                                <p><a href="">Up to 35% off | Consoles</a></p>
+                            </div>
+                            <div style="display:inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/VG-2019Dec/xcm_banners_2021_jupiterph3_qc-186x116-product1-product2-badge-u2pd6-8593w-0fren_372x232_in-en._SY116_CB639596217_.jpg"
+                                    alt="">
+                                <p><a href="">Up to 60% off | games</a></p>
+                            </div>
+                        </div><br>
+                        <div>
+                            <div class="me-1" style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/VG-2019Dec/xcm_banners_2021_jupiterph3_qc-186x116-product1-product2-badge-u2pd6-8593w-eyn03_372x232_in-en._SY116_CB639596217_.jpg"
+                                    alt="">
+                                <p>Up to 55% off|accessories</p>
+
+                            </div>
+                            <div style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/VG-2019Dec/xcm_banners_2021_jupiterph3_qc-186x116-product1-product2-badge-u2pd6-8593w_372x232_in-en._SY116_CB639596217_.jpg"
+                                    alt="">
+                                <p>Starting ₹147 |gift cards</p>
+                            </div>
+                        </div>
+                        <p><a href="">See all deals</a></p>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <div class="col">
+                <div style="width: 25rem;" class="card">
+                    <div class="card-body ">
+                        <h5 class="card-title">Up to 60% off | Daily essentials</h5>
+                        <div>
+                            <div class="me-2" style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/Event/Gateway/Jupiter_21/Phase3/186-116/PFF_10.2._SY116_CB639118513_.jpg"
+                                    alt="health and household">
+                                <p><a href="">Men's Clothing under ₹499</a></p>
+                            </div>
+                            <div style="display:inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/Event/Gateway/Jupiter_21/Phase3/186-116/PFF_9.2._SY116_CB639118513_.jpg"
+                                    alt="">
+                                <p><a href="">Women's Clothing under ₹499</a></p>
+                            </div>
+                        </div><br>
+                        <div>
+                            <div class="me-2" style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/Event/Gateway/Jupiter_21/Phase3/186-116/PFF_12.2._SY116_CB639118513_.jpg"
+                                    alt="">
+                                <p><a href="">Men's footwear under ₹499</a></p>
+
+                            </div>
+                            <div style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/Event/Gateway/Jupiter_21/Phase3/186-116/PFF_11.2._SY116_CB639118513_.jpg"
+                                    alt="">
+                                <p><a href="">Skin care | under ₹99</a></p>
+                            </div>
+                        </div>
+                        <p><a href="">See all deals</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div style="width: 25rem;" class="card">
+                    <div class="card-body ">
+                        <h5 class="card-title">Up to 70% off | Kitchen & home appliances</h5>
+                        <div>
+                            <div class="me-2" style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Smallappliances/Jupiter21-Phase3/Gw-P3-SA/3._SY116_CB639586546_.jpg"
+                                    alt="health and household">
+                                <p><a href="">Juicer mixer grinders</a></p>
+                            </div>
+                            <div style="display:inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Smallappliances/Jupiter21-Phase3/Gw-P3-SA/4._SY116_CB639586546_.jpg"
+                                    alt="">
+                                <p><a href="">Water purifiers</a></p>
+                            </div>
+                        </div><br>
+                        <div>
+                            <div class="me-2" style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Smallappliances/Jupiter21-Phase3/Gw-P3-SA/6._SY116_CB639586546_.jpghttps://images-eu.ssl-images-amazon.com/images/G/31/img20/Smallappliances/Jupiter21-Phase3/Gw-P3-SA/6._SY116_CB639586546_.jpg"
+                                    alt="">
+                                <p><a href="">Fans</a></p>
+
+                            </div>
+                            <div style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Smallappliances/Jupiter21-Phase3/Gw-P3-SA/5._SY116_CB639586546_.jpg"
+                                    alt="">
+                                <p><a href="">Geysers</a></p>
+                            </div>
+                        </div>
+                        <p><a href="">See all deals</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div style="width: 25rem;" class="card">
+                    <div class="card-body ">
+                        <h5 class="card-title">Up to 60% off | Ethnic fashion picks from local shops</h5>
+                        <div>
+                            <div class="me-2" style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/cross-site/2_1x_17th_Oct._SY116_CB639516448_.jpg"
+                                    alt="health and household">
+                                <p><a href="">Women's ethnic wear</a></p>
+                            </div>
+                            <div style="display:inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/cross-site/4_1x_17th_Oct._SY116_CB639516448_.jpg"
+                                    alt="">
+                                <p><a href="">Visit local shops store</a></p>
+                            </div>
+                        </div><br>
+                        <div>
+                            <div class="me-2" style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/cross-site/1_1x_17th_Oct._SY116_CB639516448_.jpg"
+                                    alt="">
+                                <p><a href="">Men's ethnic wear</a></p>
+
+                            </div>
+                            <div style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/cross-site/3_1x_17th_Oct._SY116_CB639516448_.jpg"
+                                    alt="">
+                                <p><a href="">Ethnic jewellery</a></p>
+                            </div>
+                        </div>
+                        <p><a href="">See all deals</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div style="width: 25rem;" class="card">
+                    <div class="card-body ">
+                        <h5 class="card-title">Up to 70% Off | Baby Essentials</h5>
+                        <div>
+                            <div class="me-2" style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/Baby/FOctober/JupiterPhase3/GWQCPC/DesktopGateway_QuadCard_186x116_ASIN_LIFESTYLE-5_1._SY116_CB638957233_.jpg"
+                                    alt="health and household">
+                                <p><a href="">Diapers & wipers</a></p>
+                            </div>
+                            <div style="display:inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/Baby/FOctober/JupiterPhase3/GWQCPC/DesktopGateway_QuadCard_186x116_ASIN_LIFESTYLE-5_4._SY116_CB638957233_.jpg"
+                                    alt="">
+                                <p><a href="">All baby products</a></p>
+                            </div>
+                        </div><br>
+                        <div>
+                            <div class="me-2" style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/Baby/FOctober/JupiterPhase3/GWQCPC/DesktopGateway_QuadCard_186x116_ASIN_LIFESTYLE-5_2._SY116_CB638957233_.jpg"
+                                    alt="">
+                                <p><a href="">Bath & skin care</a></p>
+
+                            </div>
+                            <div style="display: inline-block;">
+                                <img style="width: 150px; height: 100px;"
+                                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/Baby/FOctober/JupiterPhase3/GWQCPC/DesktopGateway_QuadCard_186x116_ASIN_LIFESTYLE-5_3._SY116_CB638957233_.jpg"
+                                    alt="">
+                                <p><a href="">Feeding supplies</a></p>
+                            </div>
+                        </div>
+                        <p><a href="">See all deals</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="container text-center my-3">
+
+        <div class="row mx-auto my-auto justify-content-center" style="border: 1px !important">
+            <div id="recipeCarousel" class="carousel slide" style="border: 1px !important" data-bs-ride="carousel">
+                <div class="carousel-inner" role="listbox" style="border: 1px !important">
+                    <h6>Up to 70% off | Bestsellers in Antivirus & more</h6>
+                    <div id="offer-carousel" class="carousel-item active">
+                        <div class="col-md-3">
+                            <div class="card" style="border:0px !important">
+                                <div class="card-img">
+                                    <a href="">
+                                        <img src="https://m.media-amazon.com/images/I/71HpEfZSgkL._AC_SY200_.jpg"
+                                            class="img-fluid">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card" style="border:0px !important">
+                                <div class="card-img">
+                                    <a href="">
+                                        <img src="https://m.media-amazon.com/images/I/61MGCZy67dL._AC_SY200_.jpg"
+                                            class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card" style="border:0px !important">
+                                <div class="card-img">
+                                    <a href="">
+                                        <img src="https://m.media-amazon.com/images/I/61H7xThAX2L._AC_SY200_.jpg"
+                                            class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card" style="border:0px !important">
+                                <div class="card-img">
+                                    <a href="">
+                                        <img src="https://m.media-amazon.com/images/I/71HYoQuZgiL._AC_SY200_.jpg"
+                                            class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card" style="border:0px !important">
+                                <div class="card-img">
+                                    <a href="">
+                                        <img src="https://m.media-amazon.com/images/I/61WXf3jXO5L._AC_SY200_.jpg"
+                                            class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card" style="border:0px !important">
+                                <div class="card-img">
+                                    <a href="">
+                                        <img src="https://m.media-amazon.com/images/I/51rah+c0bSL._AC_SY200_.jpg"
+                                            class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-bs-slide="prev">
+
+                    <img src=https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/arrow-left-square-fill.svg width="32"
+                        height="32" alt="">
+
+                </a>
+                <a class="carousel-control-next" href="#recipeCarousel" role="button" data-bs-slide="next">
+
+                    <img src=https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/arrow-right-square-fill.svg width="32"
+                        height="32" alt="">
+
+                </a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container d-flex justify-content-center"><img style="align-items: center;"
+            src="https://images-eu.ssl-images-amazon.com/images/G/31/img16/vineet/Amazon-Pay-Later/Sep_2021/JUPITER_21/Phase_2_3/Jupiter_GW-Editorial_1150x323_P3._CB638955217_.jpg"
+            alt="">
+    </div><br>
+    <div id="card-group" class="row row-cols-1 row-cols-md-3 g-4 mx-2"></div><br><br>
+
+    <footer class="text-center text-lg-start bg-dark text-muted">
+
+        <section class="d-flex justify-content-center p-4 border-bottom">
+            <h5 id="backTop" onclick="scrollToTop()">Back to top</h5>
+        </section>
+
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="fw-bold mb-4">
+                            Get to Know Us
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">About us</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Careers</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Press Releases</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Amazon Cares</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Gift a Smile</a>
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="fw-bold mb-4">
+                            Connect with Us
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Facebook</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Twitter</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Instagram</a>
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Make Money with Us
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Sell on Amazon</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Sell under Amazon Accelerator</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Amazon Global Selling</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Become an Affiliate</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Fulfilment by Amazon</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Advertise Your Products</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Amazon Pay on Merchants</a>
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Let Us Help You
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">COVID-19 and Amazon</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Your Account</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Returns Centre</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">100% Purchase Protection</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Amazon App Download</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Amazon Assistant Download</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Help</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            <a class="text-reset me-3" href="">Conditions of Use & Sale</a>
+            <a class="text-reset me-3" href="">Privacy Notice</a>
+            <a class="text-reset me-3" href="">Interest-Based Ads</a>
+
+
+            © 1996-2021, Amazon.com, Inc. or its affiliates
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script>
+        let items = document.querySelectorAll('.carousel .carousel-item')
+        console.log(items);
+        items.forEach((el) => {
+            const minPerSlide = 4
+            let next = el.nextElementSibling
+            for (var i = 1; i < minPerSlide; i++) {
+                if (!next) {
+                    // wrap carousel by using first child
+                    next = items[0]
+                } let cloneChild = next.cloneNode(true)
+                el.appendChild(cloneChild.children[0])
+                next = next.nextElementSibling
+            }
+        })
+
+        var jsondata;
+        const response = fetch("http://127.0.0.1:5500/PROJECT/Avi%20Kanodiya/Amazon%20Clone/frontend/src/data.json")
+        response.then(response => response.json())
+            .then(data => {
+                $(document).ready(() => {
+                    $.each(data, (index, value) => {
+                        console.log(index);
+                        console.log(value);
+                        console.log(value.ProductName);
+                        $("#card-group").append("<div class='col'>" + "<div class='card h-100'>" +
+                            "<img src='" + value.imgLink + "' style='height: " + value.height + "; width: " + value.width + ";'' class='card-img-top ms-2 mt-2 img1' alt='product-image'>" +
+                            "<div class='card-body'>" + "<h5 class='card-title'>" + value.ProductName + "</h5>" +
+                            "<p class='card-text'>" + "₹" + "<del>" + value.firstPrice + "</del>" + " ₹" + value.Price + "</p>" + "</div>" + "</div>" + "</div>")
+                    })
+                })
+            })
+
+        const scrollToTop = () => {
+            $(window).scrollTop(0);
+        }
+    </script>
+
+</body>
+
+</html>
