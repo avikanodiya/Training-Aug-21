@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "Addressline1": "d-133,mansarovar,chandkheda",
+        "Country": "india",
+        "City": "ahmedabad",
+        "DateOfBirth": "23/04/2000",
+        "FirstName": "avi",
+        "LastName": "kanodiya",
+        "Gender": "Male",
+        "HireDate": "16/07/2021",
+        "LicenseNumber": "GJ01QE1234",
+        "MaritalStatus": "single",
+        "Assignment": {
+            "ActionCode": "aew23",
+            "ActionReasonCode": 21,
+            "ActualTerminationDate": "12/09/2021",
+            "AssignmentCategory": "software",
+            "AssignmentId": 7,
+            "AssignmentName": "testing"
+        }
+    }
+]
