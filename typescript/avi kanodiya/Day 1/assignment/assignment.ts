@@ -1,6 +1,3 @@
-// let employee: (string)[] = ['1', 'avi', 'kanodiya', '33,ahmedabad,gujarat', '25000']
-// let employee: (object)[] = [{ "id": 1, "firstname": 'avi', "lastname": 'kanodiya', "address": '33,ahmedabad,gujarat', "salary": 25000 },
-// { "id": 2, "firstname": 'smit', "lastname": 'patel', "address": '12,gandhinagar,gujarat', "salary": 20000 }]
 let employee = [];
 let newemp = [];
 
@@ -23,7 +20,7 @@ const searchById = (id) => {
 }
 
 const insertEmployee = (emp) => {
-    employee.push(emp)
+    employee.push(emp)                 
 }
 
 const deleteEmployeeById = (id) => {
