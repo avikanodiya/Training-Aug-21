@@ -1,12 +1,15 @@
 import { Vac, Vacancy } from './vacancy'
 import { applicant, Applicant } from './applicant'
 import { scheduledInterviews, InterviewSchedule } from './interview'
+import { res, Result } from './result'
 
 let vac1 = new Vacancy(12, 'Web Developer', 'IT', 30000, 'active')
 let vac2 = new Vacancy(6, 'Android Developer', 'IT', 28000, 'active')
 let applicant1 = new Applicant(1, 'smit', 'CE', 30000, 'ahmedabad', 12)
 let applicant2 = new Applicant(2, 'ajay', 'IT', 25000, 'gandhinagar', 6)
 let interview1 = new InterviewSchedule(112, 6, 2, '01/01/2021', 'ahmedabad')
+let res1 = new Result(1, 'pass', 12)
+res1.insertData()
 vac1.insertData();
 vac2.insertData();
 applicant1.insertData();
@@ -17,6 +20,8 @@ let x = Vac.filter((a) => {
 
 })
 console.log(applicant);
+console.log(res);
+
 
 
 // function androidInterview() {

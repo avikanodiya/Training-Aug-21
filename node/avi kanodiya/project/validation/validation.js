@@ -1,10 +1,15 @@
-const joi = require('joi')
+const Joi = require('@hapi/joi')
 
-const validateUser = joi.object({
-    username: joi.string().required(),
-    password: joi.string.min(8).required(),
-    firstname: joi.string().required(),
-    lastname: joi.string().required()
+const validateUser = Joi.object({
+    username: Joi.string().required(),
+    password: Joi.string().min(8).required(),
+    firstname: Joi.string().required(),
+    lastname: Joi.string().required()
 })
 
-module.exports = { validateUser }
+const authValidate = Joi.object({
+    username: Joi.string().required(),
+    password: Joi.string().min(8).required()
+})
+
+module.exports = { validateUser, authValidate }

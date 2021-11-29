@@ -5,13 +5,6 @@ const db = require('../model/student.model')
 const User = db.User;
 const { validateStudent } = require('../validation/student.validation')
 
-const auth = (req, res, next) => {
-    console.log(req.body);
-    authenticate(req.body)
-        .then(user => user ? res.json(user) : res.status(400).json({ message: 'Username or Password is incorrect' }))
-        .catch(err => next(err))
-}
-
 const authenticate = async ({ name, password }) => {
     var query = {};
     query[name] = name
@@ -27,6 +20,15 @@ const authenticate = async ({ name, password }) => {
         };
     }
 }
+
+const auth = (req, res, next) => {
+    console.log(req.body);
+    authenticate(req.body)
+        .then(user => user ? res.json(user) : res.status(400).json({ message: 'Username or Password is incorrect' }))
+        .catch(err => next(err))
+}
+
+
 
 const authenticateToken = (req, res, next) => {
     const authHeader = req.headers['authorization']

@@ -2,7 +2,7 @@ const joi = require('joi');
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
-mongoose.connect("mongodb://localhost:27017/demo", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb://localhost:27017/amazonclone", { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("connection successful!!!!"))
     .catch((err) => console.log(err));
 

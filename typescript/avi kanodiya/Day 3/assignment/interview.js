@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InterviewSchedule = exports.scheduledInterviews = void 0;
+exports.InterviewResult = exports.InterviewSchedule = exports.scheduledInterviews = void 0;
 exports.scheduledInterviews = [];
 var InterviewSchedule = /** @class */ (function () {
     function InterviewSchedule(id, vacancyId, applicantId, date, location) {
@@ -23,3 +23,22 @@ var InterviewSchedule = /** @class */ (function () {
     return InterviewSchedule;
 }());
 exports.InterviewSchedule = InterviewSchedule;
+var InterviewResult = /** @class */ (function () {
+    function InterviewResult(interviewId, vacancyId, applicantId, result) {
+        this.interviewId = interviewId;
+        this.vacancyId = vacancyId;
+        this.applicantId = applicantId;
+        this.result = result;
+    }
+    InterviewResult.prototype.insertData = function () {
+        var data = {
+            interviewId: this.interviewId,
+            vacancyId: this.vacancyId,
+            applicantId: this.applicantId,
+            result: this.result
+        };
+        exports.scheduledInterviews.push(data);
+    };
+    return InterviewResult;
+}());
+exports.InterviewResult = InterviewResult;
