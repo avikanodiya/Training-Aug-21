@@ -2,14 +2,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var restaurants_1 = require("./restaurants");
 var restaurantDetail_1 = require("./restaurantDetail");
+var booking_1 = require("./booking");
 var checkHours;
+var token = 1;
 var res = new restaurants_1.Restaurant(12, "hotel rajpal", "ahmedabad", true);
 var res2 = new restaurants_1.Restaurant(13, "hotel karnavati", "gandhinagar", true);
 var d = new restaurantDetail_1.RestaurantDetail(12, 96, 42, 6, 16);
 d.insertData();
 res.insertData();
 res2.insertData();
-function book(people, bookingDate, rId) {
+function book(people, bookingDate, rId, custName) {
     var p = people;
     var re = restaurants_1.restaurant.filter(function (r) {
         return r.rId === rId;
@@ -24,11 +26,17 @@ function book(people, bookingDate, rId) {
         else {
             var flag = people / r[0].tableSize;
             console.log(flag);
+            if (flag < 0) {
+                token = token + 1;
+                booking_1.bookings.push(token, bookingDate, custName, people);
+            }
+            else {
+            }
         }
         console.log(r);
     }
 }
-function checkAvailability(people, bookingDate, rId) {
+function checkAvailability(people, bookingDate, rId, custName) {
     var date = new Date();
     var date2 = new Date(bookingDate);
     var checkDays = date2.getTime() - date.getTime();
@@ -42,8 +50,8 @@ function checkAvailability(people, bookingDate, rId) {
             console.log('no booking available');
         }
         else {
-            book(people, bookingDate, rId);
+            book(people, bookingDate, rId, custName);
         }
     }
 }
-checkAvailability(11, "2021-11-29 21:30", 12);
+checkAvailability(11, "2021-11-29 23:30", 12, 'avi');

@@ -1,6 +1,6 @@
 import { restaurant, Restaurant } from './restaurants'
 import { restaurantDetails, RestaurantDetail } from './restaurantDetail'
-import { bookings, Booking } from './booking'
+import { bookings } from './booking'
 var checkHours;
 var token = 1;
 
@@ -10,6 +10,8 @@ let d = new RestaurantDetail(12, 96, 42, 6, 16)
 d.insertData()
 res.insertData()
 res2.insertData()
+
+
 
 function book(people, bookingDate, rId, custName) {
     let p = people
@@ -28,8 +30,9 @@ function book(people, bookingDate, rId, custName) {
             if (flag < 0) {
                 token = token + 1
                 bookings.push(token, bookingDate, custName, people)
-            } else {
                 
+            } else {
+
             }
 
         }
@@ -56,4 +59,4 @@ function checkAvailability(people, bookingDate, rId, custName) {
 
 
 
-checkAvailability(11, "2021-11-29 21:30", 12, 'avi')
+checkAvailability(11, "2021-11-29 23:30", 12, 'avi')
