@@ -28,11 +28,15 @@ function book(people, bookingDate, rId, custName) {
             let flag = people / r[0].tableSize
             console.log(flag);
             if (flag < 0) {
+                let table = 1
                 token = token + 1
                 bookings.push(token, bookingDate, custName, people)
-                
-            } else {
+                r[0].occupied = r[0].totalTable
 
+            } else {
+                let table = Math.ceil(flag)
+                bookings.push(token, bookingDate, custName, people)
+                r[0].occupied = r[0].totalTable * table
             }
 
         }
