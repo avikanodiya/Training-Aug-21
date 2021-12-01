@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
-mongoose.connect("mongodb://localhost:27017/amazonclone", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb://localhost:27017/amazonclone", { useNewUrlParser: true, useUnifiedTopology: true, strictPopulate: false })
     .then(() => console.log("connection successful!!!!"))
     .catch((err) => console.log(err));
 
@@ -38,6 +38,6 @@ const tvSchema = new Schema({
     }
 })
 
-const Product = mongoose.model('mobile', mobileSchema, "mobile")
+const Mobile = mongoose.model('mobile', mobileSchema, "mobile")
 const Tv = mongoose.model('televisions', tvSchema, 'televisions')
-module.exports = { Product, Tv }
+module.exports = { Mobile, Tv }

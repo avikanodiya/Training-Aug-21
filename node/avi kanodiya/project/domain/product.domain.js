@@ -2,9 +2,10 @@ const jwt = require("jsonwebtoken")
 const config = require("../authorization/config.json")
 const bcrypt = require('bcryptjs')
 const db = require('../model/products.model')
-const Product = db.Product;
+const Mobile = db.Mobile;
 const Tv = db.Tv;
 const { Admin } = require('../model/admin.model')
+const { Order } = require('../model/order.model')
 const { productValidate, tvValidate } = require('../validation/validation')
 
 const reg = async (req, res, next) => {
@@ -30,7 +31,7 @@ const logg = async (req, res, next) => {
     }
 }
 
-const addProduct = async (req, res, next) => {
+const addMobile = async (req, res, next) => {
     const data = req.body
     const { error } = productValidate.validate(data)
     console.log(error);
@@ -39,12 +40,17 @@ const addProduct = async (req, res, next) => {
             message: 'not a valid data'
         })
     } else {
-        const product = new Product(data)
+        const product = new Mobile(data)
         await product.save()
         res.json({
             message: 'product added'
         })
     }
+}
+
+const getMobile = async (req, res, next) => {
+    const Mobile = await db.Mobile.find()
+    res.send(Mobile)
 }
 
 const addTv = async (req, res, next) => {
@@ -72,7 +78,22 @@ const getTv = async (req, res, next) => {
 
 const getTvByCompany = async (req, res, next) => {
     const comp = req.params.company
+    // const product = await Tv.findOne()
     console.log(comp);
+    const mobile = await Tv.find({ company: comp })
+    res.send(mobile)
+    next();
 }
 
-module.exports = { reg, logg, addProduct, addTv, getTv, getTvByCompany }
+const addOrder = async (req, res, next) => {
+    const data = req.body
+    await Order.insertMany(data)
+    res.send('data inserted')
+}
+
+const getOrder = async (req, res, next) => {
+    const data = await Order.find().populate('customer').populate({ path: 'order.mobile' }).populate({ path: 'order.tv' })
+    res.send(data)
+}
+
+module.exports = { reg, logg, addMobile, getMobile, addTv, getTv, getTvByCompany, addOrder, getOrder }

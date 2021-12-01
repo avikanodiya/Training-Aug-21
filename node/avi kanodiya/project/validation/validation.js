@@ -12,19 +12,19 @@ const authValidate = Joi.object({
     password: Joi.string().min(8).required()
 })
 
-const specData = Joi.object().keys({
-    modelName: Joi.string().required(),
-    brand: Joi.string().required(),
-    Storage: Joi.string().required(),
-    processor: Joi.string().required()
-})
+
 
 const productValidate = Joi.object({
     company: Joi.string().required(),
     name: Joi.string().required(),
     imageUrl: Joi.string().required(),
     price: Joi.number().required(),
-    specification: [specData]
+    specification: Joi.object().keys({
+        modelName: Joi.string().required(),
+        brand: Joi.string().required(),
+        Storage: Joi.string().required(),
+        processor: Joi.string().required()
+    })
 })
 
 const tvValidate = Joi.object({
