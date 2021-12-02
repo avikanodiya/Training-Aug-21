@@ -2,6 +2,7 @@ const Joi = require('@hapi/joi')
 
 const validateUser = Joi.object({
     username: Joi.string().required(),
+    email: Joi.string().max(50).email().required(),
     password: Joi.string().min(8).required(),
     firstname: Joi.string().required(),
     lastname: Joi.string().required()

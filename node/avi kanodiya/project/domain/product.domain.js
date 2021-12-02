@@ -80,9 +80,15 @@ const getTvByCompany = async (req, res, next) => {
     const comp = req.params.company
     // const product = await Tv.findOne()
     console.log(comp);
-    const mobile = await Tv.find({ company: comp })
-    res.send(mobile)
+    const tv = await Tv.find({ company: comp })
+    res.send(tv)
     next();
+}
+
+const getMobileByCompany = async (req, res, next) => {
+    const comp = req.params.company
+    const mobile = await Mobile.find({ company: comp })
+    res.send(mobile)
 }
 
 const addOrder = async (req, res, next) => {
@@ -96,4 +102,4 @@ const getOrder = async (req, res, next) => {
     res.send(data)
 }
 
-module.exports = { reg, logg, addMobile, getMobile, addTv, getTv, getTvByCompany, addOrder, getOrder }
+module.exports = { reg, logg, addMobile, getMobile, addTv, getTv, getTvByCompany, addOrder, getOrder, getMobileByCompany }

@@ -30,11 +30,6 @@ const auth = (req, res, next) => {
         .catch(err => next(err))
 }
 
-const getAll = async () => {
-    console.log('hi');
-    return await User.find();
-}
-
 const getById = async (id) => {
     const user = await User.findById(id)
     console.log(user);
@@ -44,7 +39,7 @@ const getById = async (id) => {
 const register = (req, res, next) => {
     console.log('inside register');
     create(req.body)
-        .then(() => res.json({}))
+        .then(() => res.json({ message: 'account created' }))
         .catch(err => next(err))
 }
 
@@ -100,7 +95,6 @@ console.log(config.secret);
 
 module.exports = {
     authenticate,
-    getAll,
     getById,
     create,
     auth,
