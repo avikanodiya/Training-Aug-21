@@ -11,8 +11,6 @@ d.insertData()
 res.insertData()
 res2.insertData()
 
-
-
 function book(people, bookingDate, rId, custName) {
     let p = people
     let re = restaurant.filter((r) => {
