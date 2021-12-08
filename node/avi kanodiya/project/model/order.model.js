@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-const { Mobile, Tv } = require('./products.model')
+const { Product } = require('./products.model')
 const { User } = require('./users.model')
 
 mongoose.connect("mongodb://localhost:27017/amazonclone", { useNewUrlParser: true, useUnifiedTopology: true })
@@ -14,13 +14,10 @@ const orderSchema = new Schema({
         ref: User
     },
     order: {
-        mobile: {
+
+        product: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: Mobile
-        },
-        tv: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: Tv
+            ref: Product
         }
     },
     date: { type: Date }

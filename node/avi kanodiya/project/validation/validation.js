@@ -16,34 +16,21 @@ const authValidate = Joi.object({
 
 
 const productValidate = Joi.object({
+    category: Joi.string().required(),
+    subcategory: Joi.string().required(),
+    title: Joi.string().required(),
     company: Joi.string().required(),
-    name: Joi.string().required(),
+    pattern: Joi.string(),
     imageUrl: Joi.string().required(),
     price: Joi.number().required(),
     specification: Joi.object().keys({
-        modelName: Joi.string().required(),
-        brand: Joi.string().required(),
-        Storage: Joi.string().required(),
-        processor: Joi.string().required()
+        storage: Joi.string(),
+        screenSize: Joi.string(),
+        resolution: Joi.string(),
+        displayTech: Joi.string(),
+        modelyear: Joi.number(),
     })
 })
 
-const tvValidate = Joi.object({
-    company: Joi.string().required(),
-    name: Joi.string().required(),
-    size: Joi.string().required(),
-    patternName: Joi.string().required(),
-    imageUrl: Joi.string().required(),
-    price: Joi.number().required(),
-    specification: Joi.object().keys({
-        screenSize: Joi.string().required(),
-        supportedServices: Joi.string().required(),
-        connectorType: Joi.string().required(),
-        Brand: Joi.string().required(),
-        Resolution: Joi.string().required(),
-        displayTech: Joi.string().required(),
-        modelYear: Joi.number().required()
-    })
-})
 
-module.exports = { validateUser, authValidate, productValidate, tvValidate }
+module.exports = { validateUser, authValidate, productValidate }
