@@ -129,7 +129,7 @@ const getCategory = async (req, res, next) => {
 
 const subCategory = async (req, res, next) => {
     const data = req.params.subCategory
-    const product = await Product.find({ category: data })
+    const product = await Product.find({ subcategory: data })
     res.send(product)
 }
 
