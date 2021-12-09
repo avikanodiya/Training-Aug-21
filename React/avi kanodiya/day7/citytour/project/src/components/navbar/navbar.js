@@ -9,7 +9,7 @@ function navbar() {
                     <img src="https://png.pngtree.com/png-clipart/20200709/original/pngtree-travel-logo-design-free-logo-design-template-png-image_2944350.jpg" width="100" height='60' alt="" class="" alt="" />
                 </a>
                 <div className='collapse navbar-collapse'>
-                    <ul className='navbar-nav'>
+                    <ul className='navbar-nav ms-auto'>
                         <li className='nav-item'>
                             <a className='nav-link' href="">Home</a>
                         </li>
