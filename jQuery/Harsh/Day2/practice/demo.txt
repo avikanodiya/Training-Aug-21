@@ -1,2 +1,0 @@
-<h2> jQuery and AJAX tutorial </h2>
-<p id="intro"> jQuery and AJAX </p>
