@@ -50,11 +50,6 @@ const App = () => {
         }
         setExpenses([...expenses, item])
         alertHandler({ type: 'success', text: 'item added' })
-        setTimeout(() => {
-          console.log(expenses);
-
-        }, 3000);
-
       }
 
     } else {
