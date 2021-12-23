@@ -8,11 +8,12 @@ import { v4 as uuidv4 } from 'uuid';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import './App.css'
 
-const initialExpenses = [
-  { id: uuidv4(), charge: "rent", amount: 1600 },
-  { id: uuidv4(), charge: "car payment", amount: 400 },
-  { id: uuidv4(), charge: "credit card bill", amount: 1200 }
-]
+// const initialExpenses = [
+//   { id: uuidv4(), charge: "rent", amount: 1600 },
+//   { id: uuidv4(), charge: "car payment", amount: 400 },
+//   { id: uuidv4(), charge: "credit card bill", amount: 1200 }
+// ]
+const initialExpenses = localStorage.getItem('expenses') ? JSON.parse(localStorage.getItem("expenses")) : [];
 
 const App = () => {
   const [expenses, setExpenses] = useState(initialExpenses);
@@ -21,7 +22,7 @@ const App = () => {
   const [alert, setAlert] = useState({ state: false })
   const [edit, setEdit] = useState(false)
   const [id, setId] = useState()
-
+  localStorage.setItem('expenses', JSON.stringify(expenses))
   const chargeHandler = (e) => {
     setCharge(e.target.value)
   }
@@ -49,6 +50,11 @@ const App = () => {
         }
         setExpenses([...expenses, item])
         alertHandler({ type: 'success', text: 'item added' })
+        setTimeout(() => {
+          console.log(expenses);
+
+        }, 3000);
+
       }
 
     } else {
