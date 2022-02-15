@@ -7,6 +7,7 @@ mongoose.connect("mongodb://localhost:27017/amazonclone", { useNewUrlParse: true
 
 const adminSchema = new Schema({
     username: { type: String, required: true },
+    email: { type: String, required: true },
     hash: { type: String, required: true },
     name: { type: String, required: true }
 })

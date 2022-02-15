@@ -4,15 +4,14 @@ const bcrypt = require('bcryptjs')
 const db = require('../model/users.model');
 const { validateUser, authValidate } = require('../validation/validation');
 const User = db.User;
-
-const authenticate = async ({ username, password }) => {
-    var query = {};
-    query[username] = username
-    const user = await User.findOne({ query });
+const { Order } = require('../model/order.model')
+const authenticate = async ({ email, password }) => {
+    // var query = {};
+    // query[email] = email
+    const user = await User.findOne({ email: email });
     console.log('inside auth');
-    console.log(username);
     console.log(user);
-    console.log(`hi ${user.username}`);
+    console.log(`hi ${user.email}`);
     if (user && bcrypt.compareSync(password, user.hash)) {
         console.log(password);
         const token = jwt.sign({ sub: user.id }, config.secret, { expiresIn: '3d' })
@@ -27,7 +26,7 @@ const auth = (req, res, next) => {
     console.log(req.body);
     authenticate(req.body)
         .then(user => user ? res.json(user) : res.status(400).json({ message: 'Username or Password is incorrect' }))
-        .catch(err => next(err))
+        .catch(err => res.json(err))
 }
 
 const getById = async (id) => {
@@ -36,17 +35,10 @@ const getById = async (id) => {
     return user
 }
 
-const register = (req, res, next) => {
+const register = async (req, res, next) => {
     console.log('inside register');
-    create(req.body)
-        .then(() => res.json({ message: 'account created' }))
-        .catch(err => next(err))
-}
-
-const create = async (userParam) => {
-    console.log('inside create');
-    console.log(userParam);
-    const { error } = validateUser.validate(userParam)
+    const data = req.body
+    const { error } = validateUser.validate(data)
     if (error) {
         console.log('validation error');
         res.json({
@@ -54,21 +46,29 @@ const create = async (userParam) => {
         })
     }
     else {
-        if (await User.findOne({ username: userParam.username })) {
+        if (await User.findOne({ username: data.username })) {
             console.log('inside else');
-            console.log(userParam);
-            throw 'Username "' + userParam.username + '" is already taken';
+            console.log(data);
+            res.status(422).json({ message: "username already exists" })
+        } else if (await User.findOne({ email: data.email })) {
+            res.status(422).json({ message: "email already exists" })
+        } else {
+            const user = new User(data);
+            if (data.password) {
+                user.hash = bcrypt.hashSync(data.password, 10);
+            }
+            await user.save();
+            res.status(201).json({ message: "registration successful" })
         }
-
-        const user = new User(userParam);
-
-        if (userParam.password) {
-            user.hash = bcrypt.hashSync(userParam.password, 10);
-        }
-        await user.save();
     }
-
 }
+
+// const create = async (userParam) => {
+//     console.log('inside create');
+//     console.log(userParam);
+//     const { error } = validateUser.validate(userParam)
+
+// }
 
 const forgotPassword = async (req, res, next) => {
     const data = req.body
@@ -91,13 +91,63 @@ const forgotPassword = async (req, res, next) => {
     }
 }
 
+const validUser = async (req, res, next) => {
+    try {
+        const validuser = await User.findOne({ email: req.body.email })
+        res.status(201).json(validuser)
+    } catch (error) {
+        res.status(401).json({ message: "user not found" })
+    }
+}
+
+const updateCart = async (req, res, next) => {
+    const data = req.body
+    const { id } = req.params
+    console.log(data, id);
+    console.log(`basket:${data}`);
+    console.log('inside update cart');
+    const user = await User.updateOne({ _id: id }, {
+        $set: {
+            carts: req.body.basket
+        }
+    })
+    res.status(201).json({ message: 'cart updated' })
+}
+
+const addOrder = async (req, res, next) => {
+    console.log(req.body);
+    const { id, basket, date, amount, address, contact } = req.body
+    const order = new Order({ customer: id, order: basket, amount: amount, address: address, contact: contact, date: date })
+    await order.save()
+    res.status(200).json({
+        message: 'success'
+    })
+}
+
+const getOrder = async (req, res, next) => {
+    const { id } = req.params
+    const data = await Order.find({ customer: id }).populate('customer')
+    if (data) {
+        res.status(200).json(data)
+    } else {
+        res.status(400).json({ message: 'error' })
+    }
+
+}
 console.log(config.secret);
+
+// const paymentRazorpay = async (req, res, next) => {
+
+// }
 
 module.exports = {
     authenticate,
     getById,
-    create,
     auth,
     forgotPassword,
-    register
-}
+    register,
+    validUser,
+    updateCart,
+    addOrder,
+    getOrder
+}   

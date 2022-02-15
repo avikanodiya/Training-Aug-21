@@ -1,11 +1,12 @@
 import React from 'react'
+import { Card } from 'react-bootstrap'
 
-const PersonalDetails = ({ PersonalDetails }) => {
-    const { firstName, lastName, DOB } = PersonalDetails
+const PersonalDetails = ({ student }) => {
+    console.log(student);
     return (
-        <div>
-            
-        </div>
+        <>
+            <div>heloo</div>
+        </>
     )
 }
 

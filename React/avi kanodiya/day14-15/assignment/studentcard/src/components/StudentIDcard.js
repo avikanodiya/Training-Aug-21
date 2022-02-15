@@ -14,9 +14,12 @@ const StudentIDcard = () => {
 
     ]
     const [personalDetails, setPersonalDetails] = useState(personalInitial)
+    console.log(personalDetails);
     return (
-        <>
-            <PersonalDetails personalDetails={personalDetails} />
+        <>{personalDetails.map((student) => {
+            <PersonalDetails student={student} />
+        })
+        }
         </>
     )
 }

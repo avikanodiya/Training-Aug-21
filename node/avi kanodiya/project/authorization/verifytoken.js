@@ -1,11 +1,8 @@
 let jwt = require("jsonwebtoken");
 const config = require("./config.json");
 function veryfytoken(req, res, next) {
-  //getting token from headers
   var token = req.headers["x-access-token"];
   console.log(req.headers["x-access-token"]);
-  //console.log(token);
-  // verifying token
   jwt.verify(
     token,
     config.secret,

@@ -28,8 +28,8 @@ const schema = new Schema({
     },
     lastname: {
         type: String,
-
-    }
+    },
+    carts: Array
 })
 
 const User = mongoose.model('User', schema, "User")

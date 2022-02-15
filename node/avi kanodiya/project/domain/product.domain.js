@@ -7,6 +7,7 @@ const bcrypt = require('bcryptjs')
 const { Product } = require('../model/products.model')
 const { Admin } = require('../model/admin.model')
 const { Order } = require('../model/order.model')
+const { Category } = require('../model/category.model')
 const { productValidate } = require('../validation/validation')
 
 const reg = async (req, res, next) => {
@@ -32,43 +33,10 @@ const logg = async (req, res, next) => {
     }
 }
 
-const addMobile = async (req, res, next) => {
-    const data = req.body
-    const { error } = productValidate.validate(data)
-    console.log(error);
-    if (error) {
-        res.json({
-            message: 'not a valid data'
-        })
-    } else {
-        const product = new Product(data)
-        await product.save()
-        res.json({
-            message: 'product added'
-        })
-    }
-}
 
 const getMobile = async (req, res, next) => {
     const Mobile = await db.Product.find()
     res.send(Mobile)
-}
-
-const addTv = async (req, res, next) => {
-    const data = req.body
-    const { error } = productValidate.validate(data)
-    console.log(error);
-    if (error) {
-        res.json({
-            message: 'not a valid data'
-        })
-    } else {
-        const tv = await new Product(data)
-        await tv.save()
-        res.json({
-            message: 'product added successfuly'
-        })
-    }
 }
 
 const addProduct = async (req, res, next) => {
@@ -88,13 +56,13 @@ const addProduct = async (req, res, next) => {
     }
 }
 
-const getTv = async (req, res, next) => {
-    const tv = await Product.find()
-    console.log(tv);
-    res.send(tv)
+const getProduct = async (req, res, next) => {
+    const product = await Product.find()
+    console.log(product);
+    res.send(product)
 }
 
-const getTvByCompany = async (req, res, next) => {
+const getByCompany = async (req, res, next) => {
     const comp = req.params.company
     // const product = await Tv.findOne()
     console.log(comp);
@@ -116,11 +84,12 @@ const addOrder = async (req, res, next) => {
     res.send('data inserted')
 }
 
-const getCategory = async (req, res, next) => {
-    const data = req.params.category
-    const product = await Product.find({ category: data })
+const getCategoryProduct = async (req, res, next) => {
+    const { categoryId } = req.params
+    console.log(categoryId);
+    const product = await Product.find({ categoryId: categoryId })
     if (product) {
-        res.send(product)
+        res.status(201).json(product)
     } else {
         res.json({ message: 'no product found from that category' })
     }
@@ -128,9 +97,9 @@ const getCategory = async (req, res, next) => {
 }
 
 const subCategory = async (req, res, next) => {
-    const data = req.params.subCategory
-    const product = await Product.find({ subcategory: data })
-    res.send(product)
+    const { subcategoryId } = req.params
+    const product = await Product.find({ subcategoryId: subcategoryId })
+    res.status(201).json(product)
 }
 
 const getOrder = async (req, res, next) => {
@@ -138,4 +107,30 @@ const getOrder = async (req, res, next) => {
     res.send(data)
 }
 
-module.exports = { reg, logg, addMobile, getMobile, addTv, getTv, addOrder, getOrder, getCategory, subCategory, addProduct, getTvByCompany }
+const singleProduct = async (req, res, next) => {
+    const { id } = req.params
+    console.log(req.params);
+    console.log(id);
+    const p = await Product.findOne({ _id: id })
+    res.status(201).json(p)
+}
+
+const getCat = async (req, res, next) => {
+    const category = await Category.find()
+    res.status(201).json(category)
+}
+
+// const orderCapture = async (req, res, next) => {
+//     console.log(req.body);
+//     var options = {
+//         amount: req.body.amount,
+//         currency: 'INR',
+//         reciept: 'rcp1'
+//     }
+//     instance.orders.create(options, (err, order) => {
+//         console.log(order);
+//         res.send({ orderId: order.id })
+//     })
+// }
+
+module.exports = { reg, logg, getMobile, getProduct, addOrder, getOrder, getCategoryProduct, subCategory, addProduct, getByCompany, singleProduct, getCat }

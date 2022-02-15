@@ -1,6 +1,9 @@
 const express = require('express')
 const router = express.Router();
-const { forgotPassword, getById } = require('../domain/users.domain')
+const { forgotPassword, getById, updateCart, addOrder, getOrder } = require('../domain/users.domain')
 
 router.post('/forgotpassword', forgotPassword)
-module.exports = router;
+router.post('/updatedata/:id', updateCart)
+router.post('/addorder', addOrder)
+router.get('/getorders/:id', getOrder)
+module.exports = router; 
