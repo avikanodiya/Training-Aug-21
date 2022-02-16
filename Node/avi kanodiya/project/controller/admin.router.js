@@ -86,7 +86,7 @@ const AdminJSMongoose = require('@adminjs/mongoose')
 AdminJS.registerAdapter(AdminJSMongoose)
 
 const adminjsOptions = {
-    resources: [Admin, Order, User, Product, Category, SubCategory],
+    resources: [Admin, User, Product, Category, SubCategory],
 }
 const adminJs = new AdminJS(adminjsOptions)
 
